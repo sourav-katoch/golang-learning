@@ -30,4 +30,20 @@ func main() {
 	default:
 		fmt.Println("It's a weekend")
 	}
+
+	//type switch, declare t only when needed otherwise would work fine.
+	whoAmI := func(i interface{}) {
+		switch t := i.(type) {
+		case int:
+			fmt.Println("Integer", t)
+		case string:
+			fmt.Println("String", t)
+		case bool:
+			fmt.Println("Boolean", t)
+		default:
+			fmt.Println("Other", t)
+		}
+	}
+
+	whoAmI(55.09)
 }
